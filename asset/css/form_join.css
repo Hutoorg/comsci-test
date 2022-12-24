@@ -6,7 +6,7 @@
     margin-bottom: 1cm;
 }
 
-.card-body {
+.card-body, .table-responsive {
     font-weight: 400;
     font-size: 22px;
     text-align: center;
@@ -35,4 +35,21 @@
     background-color: #449459;
     color: white;
 }
-/* END */
+/* Search form & button End */
+
+/* Table */
+.table-responsive {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 60%;
+}
+
+td, th {
+    border: 1px solid #555;
+    text-align: left;
+    padding: 8px;
+  }
+/* Table End */
