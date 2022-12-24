@@ -36,11 +36,8 @@
     color: white;
 }
 /* Search form & button End */
-.table-responsive {
-    text-align: center;
-
 table {
-    display: inline-block;
+    margin: 0 auto;
     margin-top: 1cm;
     border-collapse: collapse;
     width: 60%;
