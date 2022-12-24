@@ -6,7 +6,7 @@
     margin-bottom: 1cm;
 }
 
-.card-body, .table-responsive {
+.card-body {
     font-weight: 400;
     font-size: 22px;
     text-align: center;
@@ -36,6 +36,9 @@
     color: white;
 }
 /* Search form & button End */
+.table-responsive {
+    text-align: center;
+
 table {
     margin-top: 1cm;
     border-collapse: collapse;
