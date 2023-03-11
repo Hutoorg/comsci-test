@@ -13,13 +13,21 @@ h2 {
 	text-align: center;
 	font-weight: 600;
 	font-size: 36px;
+	margin-bottom: 5px;
+}
+
+#signuperr {
+	text-align: center;
+	font-weight: 400;
+	font-size: 26;
 	margin-bottom: 20px;
+	color: rgb(184, 0, 0);
 }
 
 input#full-name,
 input#name,
 input#email,
-input#phone-no,
+input#password,
 select,
 input#birthday {
 	border: none;

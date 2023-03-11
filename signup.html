@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <title>Sign up | Computer Science Test</title>
-    <link rel="shortcut icon" href="/asset/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="assets/css/head.css" />
     <link rel="stylesheet" href="assets/css/signup.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -25,16 +26,26 @@
 
   <body>
     <header class="header">
-      <a href="/comsci-test" class="logo"> Computer Science Test</a>
+      <a href="" class="logo"
+        ><img class="logo" src="assets/logo.png" /> Computer Science Test</a
+      >
       <div class="header-right">
-        <a href="signup" class="active">Sign up</a>
+        <a href="signup">Sign up</a>
         <a href="announcements">Announcements</a>
         <a href="//hutoorg.github.io/contact-us">Contact</a>
       </div>
     </header>
 
-    <form action="https://formspree.io/f/xlekberj" method="POST">
+    <form
+      name="Sign Up ComSci"
+      id="signup"
+      action="/signup/success"
+      method="post"
+      data-netlify="true"
+      enctype="multipart/form-data"
+    >
       <h2>Sign up for Computer Science Test</h2>
+      <h3 id="signuperr">Test</h3>
       <label for="full-name">Full Name (Required):</label>
       <input
         type="text"
@@ -44,14 +55,8 @@
         required
       />
       <br />
-      <label for="name">Nickname: (Required)</label>
-      <input
-        type="text"
-        name="Nickname"
-        id="name"
-        placeholder="Nickname"
-        required
-      />
+      <label for="name">Nickname:</label>
+      <input type="text" name="Nickname" id="name" placeholder="Nickname" />
       <br />
       <label for="email">Email (Required):</label>
       <input
@@ -59,6 +64,24 @@
         name="Email"
         id="email"
         placeholder="Email (email@example.com)"
+        required
+      />
+      <br />
+      <label for="password">Password (Required):</label>
+      <input
+        type="password"
+        name="Password"
+        id="password"
+        placeholder="Password"
+        required
+      />
+      <br />
+      <label for="password">Confirm Password (Required):</label>
+      <input
+        type="password"
+        name="Password"
+        id="password"
+        placeholder="Password"
         required
       />
       <br />
@@ -341,6 +364,17 @@
       <label for="birthday">Birthday (Required):</label>
       <input type="date" name="birthday" id="birthday" required />
       <br />
+      <label for="devornot"
+        >Are you a developer, ComSci Student,<br />or anything like that?
+        (Required):</label
+      >
+      <select name="Dev" id="devornot">
+        <option value="Out" selected disabled>Select Yes or No</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <br />
       <label for="photo" class="photo"
         >Your photo (Max 5MB | Click to Upload | Required)</label
       >
@@ -360,9 +394,7 @@
           data-callback="javascriptCallback"
         ></div>
         <button type="submit" class="ctrl-btn">Submit</button>
-        <button type="reset" class="ctrl-btn" onclick="saved()">
-          Reset and go back to homepage
-        </button>
+        <button type="reset" class="ctrl-btn" onclick="saved()">Reset</button>
       </div>
     </form>
     <script src="assets/js/signup.js"></script>
