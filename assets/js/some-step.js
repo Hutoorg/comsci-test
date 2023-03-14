@@ -1,0 +1,1 @@
+netlifyIdentity.on("signup");
