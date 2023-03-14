@@ -1,1 +1,1 @@
-netlifyIdentity.on("signup");
+netlifyIdentity.open("signup");
