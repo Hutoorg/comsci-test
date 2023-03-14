@@ -404,6 +404,7 @@
         var name = document.getElementById("full-name").value;
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
+        netlifyIdentity.init();
         netlifyIdentity.signup(email, password, name, function (err) {
           if (err) {
             console.error("Error signing up:", err);
