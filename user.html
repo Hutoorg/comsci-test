@@ -40,7 +40,57 @@
       </div>
     </header>
 
-    <div class="userpage"></div>
+    <div class="userpage">
+      <!-- Add a link to the admin page in your navigation -->
+      <a href="/admin/">Admin</a>
+
+      <!-- Create an admin page that will only be accessible to logged in users -->
+      <div id="app"></div>
+
+      <script>
+        // Initialize Netlify Identity
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", (user) => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+              });
+            } else {
+              // Render the user page
+              renderUserPage(user);
+            }
+          });
+        }
+
+        // Listen for when a user is logged in
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("login", (user) => {
+            document.location.href = "/admin/";
+          });
+        }
+
+        // Render the user page
+        function renderUserPage(user) {
+          // Get the user's email
+          const email = user.email;
+
+          // Create the user page
+          const app = document.getElementById("app");
+          app.innerHTML = `
+            <h1>Welcome, ${email}!</h1>
+            <p>This is your user page.</p>
+            <button onclick="logout()">Logout</button>
+          `;
+        }
+
+        // Logout function
+        function logout() {
+          if (window.netlifyIdentity) {
+            window.netlifyIdentity.logout();
+          }
+        }
+      </script>
+    </div>
     <script src="assets/js/homepage.js"></script>
     <script src="assets/js/console_logging.min.js"></script>
     <script
