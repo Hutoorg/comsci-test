@@ -27,7 +27,8 @@
   <body>
     <header class="header">
       <a href="" class="logo"
-        ><img class="logo" src="assets/logo.png" /> Computer Science Test</a
+        ><img class="logo" src="assets/logo.png" alt="Huto Logo" /> Computer
+        Science Test</a
       >
       <div class="header-right">
         <a href="signup">Sign up</a>
@@ -39,7 +40,7 @@
     <form
       name="Sign Up ComSci"
       id="signup"
-      action="/signup/success"
+      action="user"
       method="post"
       data-netlify="true"
       enctype="multipart/form-data"
@@ -339,7 +340,7 @@
         <option value="Uzbekistan">Uzbekistan</option>
         <option value="Vanuatu">Vanuatu</option>
         <option value="Venezuela">Venezuela</option>
-        <option value="Vietnam">VietNam</option>
+        <option value="Vietnam">Vietnam</option>
         <option value="Virgin Islands (British)">
           Virgin Islands (British)
         </option>
@@ -397,15 +398,20 @@
           data-sitekey="0x4AAAAAAADMe_upOSmVUfat"
           data-callback="javascriptCallback"
         ></div>
-        <button class="ctrl-btn" onclick="saved()">Create</button>
+        <button type="submit" class="ctrl-btn">Submit</button>
         <button type="reset" class="ctrl-btn">Reset</button>
       </div>
     </form>
     <script src="assets/js/signup.min.js"></script>
+    <script src="assets/js/console_logging.min.js"></script>
     <script
       src="https://challenges.cloudflare.com/turnstile/v0/api.js"
       async
       defer
+    ></script>
+    <script
+      src="//code.tidio.co/wfrcyhlps6zxndzrhxfkfsl5imzvmabz.js"
+      async
     ></script>
   </body>
 </html>
