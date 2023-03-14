@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="assets/css/head.css" />
     <link rel="stylesheet" href="assets/css/signup.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -27,7 +26,8 @@
   <body>
     <header class="header">
       <a href="" class="logo"
-        ><img class="logo" src="assets/logo.png" /> Computer Science Test</a
+        ><img class="logo" src="assets/logo.png" alt="Huto Logo" /> Computer
+        Science Test</a
       >
       <div class="header-right">
         <a href="signup">Sign up</a>
@@ -39,7 +39,7 @@
     <form
       name="Sign Up ComSci"
       id="signup"
-      action="/signup/success"
+      action="some-step"
       method="post"
       data-netlify="true"
       enctype="multipart/form-data"
@@ -339,7 +339,7 @@
         <option value="Uzbekistan">Uzbekistan</option>
         <option value="Vanuatu">Vanuatu</option>
         <option value="Venezuela">Venezuela</option>
-        <option value="Vietnam">VietNam</option>
+        <option value="Vietnam">Vietnam</option>
         <option value="Virgin Islands (British)">
           Virgin Islands (British)
         </option>
@@ -386,6 +386,10 @@
         accept="image/*"
         required
       />
+      <br />
+      <div class="previewdiv">
+        <img id="preview" alt="Your photo" />
+      </div>
 
       <div class="ctrl-center">
         <div
@@ -394,42 +398,19 @@
           data-callback="javascriptCallback"
         ></div>
         <button type="submit" class="ctrl-btn">Submit</button>
-        <button type="reset" class="ctrl-btn" onclick="saved()">Reset</button>
+        <button type="reset" class="ctrl-btn">Reset</button>
       </div>
     </form>
-    <script>
-      var signupForm = document.getElementById("signup");
-      signupForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-        var name = document.getElementById("full-name").value;
-        var email = document.getElementById("email").value;
-        var password = document.getElementById("password").value;
-        netlifyIdentity.init();
-        netlifyIdentity.signup(email, password, name, function (err) {
-          if (err) {
-            console.error("Error signing up:", err);
-            document.getElementById("signuperr").innerHTML =
-              "Error signing up: " + err;
-          } else {
-            console.log("Signed up successfully");
-            netlifyIdentity.login(email, password, function (err) {
-              if (err) {
-                console.error("Error logging in:", err);
-                document.getElementById("signuperr").innerHTML =
-                  "Error logging in: " + err;
-              } else {
-                console.log("Logged in successfully");
-                window.location.href = "/user.html";
-              }
-            });
-          }
-        });
-      });
-    </script>
+    <script src="assets/js/signup.min.js"></script>
+    <script src="assets/js/console_logging.min.js"></script>
     <script
       src="https://challenges.cloudflare.com/turnstile/v0/api.js"
       async
       defer
+    ></script>
+    <script
+      src="//code.tidio.co/wfrcyhlps6zxndzrhxfkfsl5imzvmabz.js"
+      async
     ></script>
   </body>
 </html>
