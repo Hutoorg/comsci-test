@@ -56,6 +56,10 @@ option:hover {
 	background-color: rgb(0, 0, 128);
 }
 
+img#preview {
+	display: none;
+}
+
 .ctrl-center {
 	margin-top: 1em;
 }
