@@ -11,6 +11,9 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Include the Netlify Identity script -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -50,9 +53,9 @@
       <script>
         // Initialize Netlify Identity
         if (window.netlifyIdentity) {
-          window.netlifyIdentity.on("init", (user) => {
+          netlifyIdentity.on("init", (user) => {
             if (!user) {
-              window.netlifyIdentity.on("login", () => {
+              netlifyIdentity.on("login", () => {
                 document.location.href = "/admin/";
               });
             } else {
