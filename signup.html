@@ -45,7 +45,7 @@
       enctype="multipart/form-data"
     >
       <h2>Sign up for Computer Science Test</h2>
-      <h3 id="signuperr">Test</h3>
+      <h3 id="signuperr"></h3>
       <label for="full-name">Full Name (Required):</label>
       <input
         type="text"
@@ -390,14 +390,42 @@
       <div class="ctrl-center">
         <div
           class="cf-turnstile"
-          data-sitekey="0x4AAAAAAACPGt5aH9ThMoGi"
+          data-sitekey="0x4AAAAAAADMe_upOSmVUfat"
           data-callback="javascriptCallback"
         ></div>
         <button type="submit" class="ctrl-btn">Submit</button>
         <button type="reset" class="ctrl-btn" onclick="saved()">Reset</button>
       </div>
     </form>
-    <script src="assets/js/signup.js"></script>
+    <script>
+      var signupForm = document.getElementById("signup");
+      signupForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        var name = document.getElementById("full-name").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        netlifyIdentity.init();
+        netlifyIdentity.signup(email, password, name, function (err) {
+          if (err) {
+            console.error("Error signing up:", err);
+            document.getElementById("signuperr").innerHTML =
+              "Error signing up: " + err;
+          } else {
+            console.log("Signed up successfully");
+            netlifyIdentity.login(email, password, function (err) {
+              if (err) {
+                console.error("Error logging in:", err);
+                document.getElementById("signuperr").innerHTML =
+                  "Error logging in: " + err;
+              } else {
+                console.log("Logged in successfully");
+                window.location.href = "/user.html";
+              }
+            });
+          }
+        });
+      });
+    </script>
     <script
       src="https://challenges.cloudflare.com/turnstile/v0/api.js"
       async
