@@ -2,11 +2,86 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Computer Science Test</title>
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/head.css" />
+    <link rel="stylesheet" href="assets/css/homepage.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WIP</title>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-GJ5DVQ4B4H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-GJ5DVQ4B4H");
+    </script>
   </head>
+
   <body>
-    <h1>Coming soon</h1>
+    <header class="header">
+      <a href="" class="logo"
+        ><img class="logo" src="assets/logo.png" alt="Huto Logo" /> Computer
+        Science Test</a
+      >
+      <div class="header-right">
+        <a href="signup">Sign up</a>
+        <a href="announcements">Announcements</a>
+        <a href="//hutoorg.github.io/contact-us">Contact</a>
+      </div>
+    </header>
+
+    <div class="homepage">
+      <div class="name_discrep">
+        <img src="assets/logo.png" alt="Huto Logo" class="icon" />
+        <h1>Huto Computer Science Test</h1>
+        <h3>Computer science knowledge testing system</h3>
+        <button class="main" onclick="mainlinkbtn()">
+          Sign up for the test
+        </button>
+      </div>
+      <div class="section">
+        <h1 class="annou-title">Announcements</h1>
+        <h3>News, announcements, and information</h3>
+        <div class="ancms-grid">
+          <a href="" class="announ"
+            >• Huto Computer Science Test registration is now open.</a
+          >
+        </div>
+      </div>
+      <div class="section">
+        <h1>Calendar</h1>
+        <h3>Schedule for Huto Computer Science Test</h3>
+        <iframe
+          src="https://calendar.google.com/calendar/embed?width=&wkst=1&bgcolor=%23ffffff&ctz=Etc%2FGMT&hl=en&title&src=MzNiOGZjZGUyYjgwY2YyZmFhNjYyZjgyYzdlYWRjZmRhY2NmMDI2ODZlY2MzMzEzMmU0MWMzNjQ2ODU2MThhNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23039BE5"
+          style="border: solid 1px #777"
+          width="800"
+          height="600"
+          frameborder="0"
+          scrolling="no"
+        ></iframe>
+        <p id="errgooglecal"></p>
+      </div>
+    </div>
+    <script src="assets/js/homepage.js"></script>
+    <script src="assets/js/console_logging.min.js"></script>
+    <!-- Start of HubSpot Embed Code -->
+    <script
+      type="text/javascript"
+      id="hs-script-loader"
+      async
+      defer
+      src="//js-na1.hs-scripts.com/24263915.js"
+    ></script>
+    <!-- End of HubSpot Embed Code -->
   </body>
 </html>
