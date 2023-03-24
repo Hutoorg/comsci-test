@@ -1,2 +1,5 @@
-const user = netlifyIdentity.currentUser.user_metadata;
-document.getElementById("welcome").innerHTML = `Welcome, ${user.full_name}`;
+const auth = netlifyIdentity.init();
+auth.on("login", (user) => {
+  const userName = user.user_metadata.full_name;
+  document.getElementById("welcome").textContent = `Welcome, ${userName}!`;
+});
