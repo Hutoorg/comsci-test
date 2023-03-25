@@ -1,11 +1,11 @@
-const authinit = netlifyIdentity.init();
+const auth = netlifyIdentity.init();
 
 netlifyIdentity.on("init", () => {
   // Netlify Identity widget is loaded and ready to use
 });
 
-if (authinit && typeof authinit.on === "function") {
-  authinit.on("login", (user) => {
+if (auth && typeof auth.on === "function") {
+  auth.on("login", (user) => {
     const userName = user.user_metadata.full_name;
     document.getElementById("welcome").textContent = `Welcome, ${userName}!`;
   });
