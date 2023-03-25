@@ -6,7 +6,7 @@ netlifyIdentity.on("init", () => {
 
 if (auth && typeof auth.on === "function") {
   auth.on("login", (user) => {
-    const userName = user.user_metadata.full_name;
+    const userName = netlifyIdentity.currentUser().user_metadata.full_name;
     document.getElementById("welcome").textContent = `Welcome, ${userName}!`;
   });
 } else {
