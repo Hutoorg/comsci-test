@@ -9,7 +9,7 @@ label {
   margin-top: 15px;
 }
 
-h2 {
+h1 {
   text-align: center;
   font-weight: 600;
   font-size: 36px;
@@ -78,6 +78,7 @@ option:hover {
   background-color: rgb(125, 222, 255);
   border: none;
   border-radius: 5px;
+  color: black;
 }
 
 .ctrl-btn:hover {

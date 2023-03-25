@@ -23,6 +23,7 @@ h3 {
   background-color: rgb(125, 222, 255);
   border: none;
   border-radius: 15px;
+  color: black;
 }
 
 .main:hover {
