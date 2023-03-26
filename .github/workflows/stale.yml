@@ -1,0 +1,64 @@
+# This workflow warns and then closes issues and PRs that have had no activity for a specified amount of time.
+#
+# You can adjust the behavior by modifying this file.
+# For more information, see:
+# https://github.com/actions/stale
+name: Huto Slate Bot
+
+on:
+  schedule:
+  - cron: '0 7 * * *'
+
+jobs:
+  stale:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+
+    steps:
+    - uses: actions/stale@v8
+      with:
+        repo-token: ${{ secrets.COMSCI_GITHUB_TOKEN }}
+        stale-issue-message: |
+          Hey,
+
+          Hope all is well. Just wanted to follow up on the GitHub Issue you submitted a while back. We noticed that it's been open for some time now and wanted to check in to see if there have been any updates or if there's anything you need help with in order to move it forward.
+
+          If you could take a quick look and let us know the status, that would be much appreciated. We value your contribution to the project and want to ensure that we're addressing any outstanding issues or pull requests in a timely manner.
+
+          Thanks for your time and attention to this matter.
+
+          Best regards,
+          Huto Stale Bot
+        stale-pr-message: |
+          Hey,
+
+          Hope all is well. Just wanted to follow up on the GitHub Pull Request you submitted a while back. We noticed that it's been open for some time now and wanted to check in to see if there have been any updates or if there's anything you need help with in order to move it forward.
+
+          If you could take a quick look and let us know the status, that would be much appreciated. We value your contribution to the project and want to ensure that we're addressing any outstanding issues or pull requests in a timely manner.
+
+          Thanks for your time and attention to this matter.
+
+          Best regards,
+          Huto Stale Bot
+        stale-issue-label: 'stale'
+        stale-pr-label: 'stale'
+        # Calculate from traffic
+        days-before-stale: 21
+        days-before-close: 60
+        # ---
+        close-issue-reason: 'not_planned'
+        exempt-issue-labels: 'no-stale'
+        exempt-pr-labels: 'no-stale'
+        operations-per-run: 30
+        remove-stale-when-updated: true
+        debug-only: false
+        ascending: false
+        delete-branch: false
+        exempt-draft-pr: false
+        enable-statistics: true
+        ignore-updates: false
+        include-only-assigned: false
