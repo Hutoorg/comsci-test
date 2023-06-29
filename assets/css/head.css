@@ -52,13 +52,13 @@ img.logo {
 /* Change the background color on mouse-over */
 .header a:hover {
   background-color: #e6e6e6;
-  color: black;
+  color: rgb(20, 20, 20);
 }
 
 /* Style the active/current link*/
 .header a.active {
-  background-color: rgb(200, 200, 200);
-  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: rgb(20, 20, 20);
 }
 
 /* Float the link section to the right */
